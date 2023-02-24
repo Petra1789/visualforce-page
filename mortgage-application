@@ -1,0 +1,16 @@
+<apex:page controller="MortgageApplicationController">
+   <apex:form>
+       <apex:pageBlockSection>
+           <apex:inputField value="{!mortgageApplication.FirstName}"/>
+           <apex:inputField value="{!mortgageApplication.LastName}"/>
+           <apex:inoutField value="{!mortgageApplication.Income__c}"/>
+           <apex:inoutField value="{!mortgageApplication.Employment_History__c}"/>
+           <apex:inoutField value="{!mortgageApplication.Credit_Score__c}"/>
+       </apex:pageBlockSection>
+       <apex:pageBlockButtons>
+           <apex:commandButton value="Submit" action="{!save}"/>
+       </apex:pageBlockButtons>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>
+           
