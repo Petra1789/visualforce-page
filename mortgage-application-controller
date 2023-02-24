@@ -1,0 +1,17 @@
+public class MortgageApplicationController {
+   public Mortage_Application__c mortgageApplication { get; set; }
+   
+   public MortgageApplicationController() {
+      mortgageApplication = new Mortgage_Application__c();
+   }
+   
+   public PageReference save() {
+      try {
+          insert mortgageApplication;
+          AppexPages.addMessage(new AppexPages.Message(ApexPages.Severity.INFO,'Application submitted successfully.'));
+      } catch (Exception e) {
+          ApexPages.addMessage(new AppexPages.Message(ApexPages.Severity.ERROR,'An error occured while submitting the application: ' + e.getMessage()));
+      }
+      return null;
+   }
+}
